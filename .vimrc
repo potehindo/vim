@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set number "включить нумерацию строк
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -30,6 +31,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,8 +43,7 @@ filetype plugin indent on    " required
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
@@ -57,6 +58,10 @@ set shiftwidth=4
 set noexpandtab
 
 let g:nerdtree_tabs_open_on_console_startup=1
+" Показать скрытые файлы
+let g:NERDTreeShowHidden=1
+let g:NERDTreeSortHiddenFirst=1
+let g:NERDTreeShowLineNumbers=1 
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -79,4 +84,5 @@ call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 syntax on
+"colorscheme grb256
 colorscheme distinguished
